@@ -80,6 +80,10 @@ export default class Piece implements IPiece {
     this.garden.appendChild(this.el);
   }
 
+  setType(type: string): void {
+    this.applyClass();
+  }
+
   bend(headDirection: string) {
     if (this.direction !== headDirection) {
       this.el.className = '';
