@@ -84,6 +84,11 @@ export default class Piece implements IPiece {
     this.applyClass();
   }
 
+  applyClass(): void {
+    this.el.className = '';
+    this.el.classList.add('cell', this.type, this.direction);
+  }
+
   bend(headDirection: string) {
     if (this.direction !== headDirection) {
       this.el.className = '';
