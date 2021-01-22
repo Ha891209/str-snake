@@ -87,6 +87,7 @@ export default class Piece implements IPiece {
   }
 
   setType(type: string): void {
+    this.type = type;
     this.applyClass();
   }
 
