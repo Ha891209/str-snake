@@ -1,5 +1,6 @@
 import Piece from './Piece';
 import { SIZE } from './constants';
+import level1 from './levels/level-1';
 
 type coord = [number, number];
 type line = coord[];
@@ -24,6 +25,9 @@ export default class Level {
    * @param y {number} - y koordináta
    * @returns {coord} - egy [x, y] koordinátával tér vissza
    */
+  translate(x: number, y: number): coord {
+    return [Math.floor(x)*SIZE, Math.floor(y)*SIZE];
+  }
 
   remove (): void {
     this.pieces.forEach(piece => {
@@ -70,6 +74,7 @@ export default class Level {
      * @var {number} cols - this.garden.clientHeight és SIZE hányadosa, 
      * lefelé kerekítve 
      */
+    let cols = Math.floor(this.garden.clientHeight/SIZE);
 
     
     
@@ -78,6 +83,7 @@ export default class Level {
      * @var {number} rows - this.garden.clientWidth és SIZE hányadosa, 
      * lefelé kerekítve 
      */
+    let rows = Math.floor(this.garden.clientHeight/SIZE);
 
     
     
@@ -86,6 +92,7 @@ export default class Level {
      * @var {LevelMap} level - this.generatorFunction által visszaadott érték, 
      * a rows és cols paraméterekkel
      */
+    let level = this.generatorFunction(rows, cols);
 
     
 
@@ -97,6 +104,9 @@ export default class Level {
        * Olvasd ki a fenti sorhoz hasonlóan az x1 és y1 koodrinátákat is, 
        * a line második eleméből!
        */
+      level1.forEach(line => {
+        const [x1, y1]: coord = line[1];
+      
 
       
 
@@ -105,9 +115,10 @@ export default class Level {
        * Hívd meg a this.line metódust és add neki át az x0, y0, x1, y1 
        * értékeket.
        */
+      this.line(x0, y0, x1, y1);
 
-      
+    })
 
-    });
+    })
   }
 }
