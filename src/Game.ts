@@ -306,9 +306,7 @@ export default class Game extends BaseGame {
     // Turn tail into HEAD and move it to where head is supposed to go.
     this.tail.setType('head');
     switch (direction) {
-      case keys.RIGHT:
-        this.tail.move(this.head.x + SIZE, this.head.y, keys[direction]);
-        break;
+  
       case keys.LEFT:
         this.tail.move(this.head.x - SIZE, this.head.y, keys[direction]);
         break;
