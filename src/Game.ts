@@ -28,6 +28,35 @@ export default class Game extends BaseGame {
     this.setEvents();
   }
 
+
+
+  getRandomLevel(): Level {
+    let index: number = Math.floor(Math.random() * this.levels.length);
+    return this.levels[index];
+  }
+
+  mayIHaveGoldenApple(): boolean {
+    let chance: number = 5;
+    let pick: number = Math.random() * 100;
+    if (pick < chance) {
+      return true;
+    }
+  }
+
+  removeGrid (): void {
+    let grids = document.querySelectorAll('.vertical-grid, .horizontal-grid');
+    grids.forEach(i => Utils.removeNode(i));
+    //for (var i = 0; i < grids.length; i++) {
+    //  grids[i] = Utils.removeNode(grids[i]);
+    //}
+
+    this.gridVisible = false; 
+  }
+
+
+
+
+
   get highScore (): number {
     return parseInt(localStorage.getItem('high-score') || '0', 10) || 0;
   }
