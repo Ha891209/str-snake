@@ -3,7 +3,7 @@ import Level from "./Level";
 import Piece from "./Piece";
 import Utils from "./Utils";
 
-export default abstract class BaseGame implements IBaseGame {
+export default abstract class BaseGame {
     protected moving: boolean = false;
 
     protected paused: boolean = false;
@@ -15,7 +15,6 @@ export default abstract class BaseGame implements IBaseGame {
     protected keyHeld: number = 0;
 
     protected noClip: boolean = false;
-
 
 
     
