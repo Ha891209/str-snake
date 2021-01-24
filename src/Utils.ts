@@ -49,8 +49,8 @@ class Utils extends Debouncer {
      * @returns {void}
      */
 
-    static removeNode(el: Element): Element {
-        let id: Element
+    static removeNode(el: Element): void {
+        el.parentElement.removeChild(el)
         return
     }
 
