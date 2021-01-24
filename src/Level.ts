@@ -104,7 +104,7 @@ export default class Level {
        * Olvasd ki a fenti sorhoz hasonlóan az x1 és y1 koodrinátákat is, 
        * a line második eleméből!
        */
-      level1.forEach(line => {
+      level.forEach(line => {
         const [x1, y1]: coord = line[1];
       
 
