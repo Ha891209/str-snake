@@ -18,29 +18,29 @@ export default abstract class BaseGame implements IBaseGame  {
 
 
     
-    protected head: Piece;
+    public head: Piece;
     
-    protected tail: Piece;
+    public tail: Piece;
 
     /** @default null */
-    food: Piece | null;
+    public food: Piece | null;
     
     /** @default null */
-    protected goldenApple: Piece | null;
+    public goldenApple: Piece | null;
 
     /** @default 0 */
-    protected length: number;
+    public length: number;
 
     /** @default 0 */
-    protected growth: number;
+    public growth: number;
 
     /** @default 0 */
-    protected score: number;
+    public score: number;
 
     /** @default null */
-    protected currentLevel: Level | null;
+    public currentLevel: Level | null;
 
-    protected garden: HTMLDivElement;
+    public garden: HTMLDivElement;
     
 
     /**
