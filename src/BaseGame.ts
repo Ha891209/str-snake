@@ -16,6 +16,34 @@ export default abstract class BaseGame implements IBaseGame {
 
     protected noClip: boolean = false;
 
+
+
+    
+    protected head: Piece;
+    
+    protected tail: Piece;
+
+    /** @default null */
+    food: Piece | null;
+    
+    /** @default null */
+    protected goldenApple: Piece | null;
+
+    /** @default 0 */
+    protected length: number;
+
+    /** @default 0 */
+    protected growth: number;
+
+    /** @default 0 */
+    protected score: number;
+
+    /** @default null */
+    protected currentLevel: Level | null;
+
+    protected garden: HTMLDivElement;
+    
+
     /**
      * @returns {number}
      * Egy random számot szorozz meg a this.level.length -el, 
